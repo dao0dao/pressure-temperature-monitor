@@ -1,5 +1,5 @@
 import type { ChartOptions } from 'components-design';
-import type { CoolingSystemEntry } from '../../services/cooling-system-mock-data.service';
+import { CoolingSystemEntry } from '../../services/models/cooling-system.model';
 
 export function buildChartOptions(entries: CoolingSystemEntry[]): ChartOptions {
   return {

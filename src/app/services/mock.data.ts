@@ -1,4 +1,4 @@
-import { CoolingSystemValues } from './cooling-system-mock-data.service';
+import { CoolingSystemValues } from "./models/cooling-system.model";
 
 export const mockCoolingSystemData: [string, CoolingSystemValues][] = Array.from(
   { length: 120 },

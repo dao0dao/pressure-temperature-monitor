@@ -5,9 +5,10 @@ import { InputNumberModule } from 'primeng/inputnumber';
 import { DatePickerModule } from 'primeng/datepicker';
 import { ButtonModule } from 'primeng/button';
 import { BehaviorSubject } from 'rxjs';
-import { CoolingSystemEntry, CoolingSystemMockDataService } from '../../services/cooling-system-mock-data.service';
 import { FieldErrorComponent } from '../../shared/components/field-error/field-error.component';
 import { toDateTimeKey } from '../../shared/utils/date-functions';
+import { CoolingSystemMockDataService } from '../../services/cooling-system-mock-data.service';
+import { CoolingSystemEntry } from '../../services/models/cooling-system.model';
 
 interface RowFormControls {
   date: Date | null;

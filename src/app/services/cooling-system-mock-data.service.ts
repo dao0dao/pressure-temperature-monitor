@@ -1,20 +1,6 @@
 import { Injectable } from '@angular/core';
 import { mockCoolingSystemData } from './mock.data';
-
-export interface CoolingSystemValues {
-  temperature: number;
-  pressure: number;
-}
-
-export interface CoolingSystemEntry extends CoolingSystemValues {
-  /** Format: yyyy-MM-dd HH-mm-ss */
-  date: string;
-}
-
-export interface AddEntriesResult {
-  added: number;
-  skipped: number;
-}
+import { CoolingSystemEntry, CoolingSystemValues } from './models/cooling-system.model';
 
 @Injectable({ providedIn: 'root' })
 export class CoolingSystemMockDataService {
