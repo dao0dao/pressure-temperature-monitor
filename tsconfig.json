@@ -19,6 +19,9 @@
     "importHelpers": true,
     "target": "ES2022",
     "module": "ES2022",
+    "paths": {
+      "components-design": ["./libs/components-design/components-design.es"]
+    },
     "lib": [
       "ES2022",
       "dom"

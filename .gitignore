@@ -6,6 +6,9 @@
 /out-tsc
 /bazel-out
 
+# Libraries input
+/libs/*
+
 # Node
 /node_modules
 npm-debug.log

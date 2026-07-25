@@ -1,0 +1,23 @@
+:host {
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto 1fr;
+  grid-template-areas: "nav" "content";
+  align-items: stretch;
+  height: 100vh;
+  background: #ffffff;
+}
+
+app-nav {
+  grid-area: nav;
+}
+
+.content {
+  width: 100%;
+  max-width: 1920px;
+  grid-area: content;
+  overflow: auto;
+  margin: 0 auto;
+  padding: 2rem max(1.5rem, calc((100vw - 1920px) / 2 + 1.5rem));
+}

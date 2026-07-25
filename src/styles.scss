@@ -1,1 +1,30 @@
-/* You can add global styles to this file, and also import other style files */
+@import "primeicons/primeicons.css";
+@import url('https://fonts.googleapis.com/css2?family=Azeret+Mono:ital,wght@0,100..900;1,100..900&family=Elms+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+  --color-bg: #ffffff;
+  --color-surface: #f8fafc;
+  --color-border: #e2e8f0;
+  --color-primary: #2563eb;
+  --color-primary-dark: #1d4ed8;
+  --color-accent: #0ea5e9;
+  --color-text: #0f172a;
+  --color-text-muted: #64748b;
+  --color-danger: #dc2626;
+  --color-success: #0f766e;
+  --radius-md: 12px;
+  --radius-sm: 8px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: "Azeret Mono", monospace;
+}
