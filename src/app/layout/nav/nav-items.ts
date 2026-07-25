@@ -1,7 +1,4 @@
-export interface NavItem {
-  label: string;
-  path: string;
-}
+import { NavItem } from './models/nav.model';
 
 export const NAV_ITEMS: NavItem[] = [
   { label: 'Monitor', path: '/monitor' },
