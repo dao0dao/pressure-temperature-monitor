@@ -1,6 +1,6 @@
 import type { ChartOptions } from 'components-design';
 import type { CoolingSystemEntry } from '../../services/cooling-system-mock-data.service';
-import { toEchartsDateString } from './date.util';
+import { toEchartsDateString } from './date-functions';
 
 export function buildChartOptions(entries: CoolingSystemEntry[]): ChartOptions {
   return {

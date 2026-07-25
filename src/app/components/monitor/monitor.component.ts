@@ -10,8 +10,8 @@ import type { ChartOptions } from 'components-design';
 import 'components-design';
 import { CoolingSystemMockDataService } from '../../services/cooling-system-mock-data.service';
 
-import { getTodayEdgeDate, toDateKey } from '../../shared/utils/date.util';
-import { buildChartOptions } from '../../shared/utils/chart-options.util';
+import { getTodayEdgeDate, toDateKey } from '../../shared/utils/date-functions';
+import { buildChartOptions } from '../../shared/utils/chart-options-builder';
 
 @Component({
   selector: 'app-monitor',

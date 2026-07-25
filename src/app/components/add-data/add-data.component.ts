@@ -7,7 +7,7 @@ import { ButtonModule } from 'primeng/button';
 import { BehaviorSubject } from 'rxjs';
 import { CoolingSystemEntry, CoolingSystemMockDataService } from '../../services/cooling-system-mock-data.service';
 import { FieldErrorComponent } from '../../shared/components/field-error/field-error.component';
-import { toDateTimeKey } from '../../shared/utils/date.util';
+import { toDateTimeKey } from '../../shared/utils/date-functions';
 
 interface RowFormControls {
   date: Date | null;
