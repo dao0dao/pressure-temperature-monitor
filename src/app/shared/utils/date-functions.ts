@@ -9,11 +9,6 @@ export function toDateTimeKey(date: Date): string {
   return `${toDateKey(date)} ${timePart}`;
 }
 
-export function toEchartsDateString(storedDate: string): string {
-  const [datePart, timePart] = storedDate.split(' ');
-  return `${datePart} ${timePart.replace(/-/g, ':')}`;
-}
-
 export function getTodayEdgeDate(edge: 'start' | 'end'): Date {
   const today = new Date();
   today.setHours(0, 0, 0, 0);

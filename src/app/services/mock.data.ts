@@ -11,7 +11,6 @@ export const mockCoolingSystemData: [string, CoolingSystemValues][] = Array.from
       .toISOString()
       .replace("T", " ")
       .slice(0, 19)
-      .replace(/:/g, "-");
 
     return [
       timestamp,
