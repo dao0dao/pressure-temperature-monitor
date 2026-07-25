@@ -2,14 +2,14 @@ import { computed, Injectable, signal } from '@angular/core';
 
 @Injectable({ providedIn: 'root' })
 export class AuthService {
-  private usernameS = signal<string | null>(null);
+  private usernameS = signal<string | null>(localStorage.getItem('username'));
 
   readonly username = computed(() => {
-    return this.usernameS() || localStorage.getItem('username');
+    return this.usernameS();
   });
 
   readonly isLoggedIn = computed(() => {
-    return this.username() !== null || localStorage.getItem('username') !== null;
+    return Boolean(this.username());
   });
 
   login(username: string): void {
@@ -18,7 +18,7 @@ export class AuthService {
   }
 
   logout(): void {
-    this.usernameS.set(null);
     localStorage.removeItem('username');
+    this.usernameS.set(null);
   }
 }
