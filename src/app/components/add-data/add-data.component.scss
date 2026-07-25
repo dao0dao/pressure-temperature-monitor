@@ -1,0 +1,60 @@
+@use '../../../styles/breakpoints' as bp;
+
+.add-data {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+
+  &__title {
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin: 0;
+    color: var(--color-text);
+  }
+
+  &__rows {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  &__row {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    align-items: start;
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    padding: 1rem;
+
+    @include bp.respond-up(bp.$breakpoint-tablet) {
+      grid-template-columns: 1fr 1fr 1fr auto;
+      align-items: end;
+    }
+  }
+
+  &__field {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+    min-width: 0;
+
+    label {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--color-text-muted);
+    }
+  }
+
+  &__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+  }
+
+  &__feedback {
+    color: var(--color-success);
+    font-size: 0.9rem;
+  }
+}

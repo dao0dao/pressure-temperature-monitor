@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+    <symbol id="icon-pressure" viewBox="0 0 24 24">
+        <path fill="currentColor" d="M12 2a10 10 0 1 0 10 10A10.01 10.01 0 0 0 12 2Zm0 18a8 8 0 1 1 8-8 8.01 8.01 0 0 1-8 8Z"/>
+        <path fill="currentColor" d="M12 5a1 1 0 0 0-1 1v1a1 1 0 0 0 2 0V6a1 1 0 0 0-1-1Zm-5.66 2.34a1 1 0 0 0-1.41 1.41l.71.71a1 1 0 1 0 1.41-1.41ZM6 11H5a1 1 0 0 0 0 2h1a1 1 0 0 0 0-2Zm12 0h-1a1 1 0 0 0 0 2h1a1 1 0 0 0 0-2Zm-1.05-2.95a1 1 0 0 0-1.41 0l-.71.71a1 1 0 0 0 1.41 1.41l.71-.71a1 1 0 0 0 0-1.41Z"/>
+        <path fill="currentColor" d="M12 12.5a1.5 1.5 0 0 0-1.5 1.5 1.5 1.5 0 0 0 3 0 1.5 1.5 0 0 0-1.5-1.5Zm0-1 5-4-4 5a1 1 0 0 1-1 0Z"/>
+    </symbol>
+    <symbol id="icon-temperature" viewBox="0 0 24 24">
+        <path fill="currentColor" d="M14 14.58V5a4 4 0 0 0-8 0v9.58a6 6 0 1 0 8 0ZM10 21a4 4 0 0 1-2.83-6.83L8 13.34V5a2 2 0 0 1 4 0v8.34l.83.83A4 4 0 0 1 10 21Z"/>
+        <path fill="currentColor" d="M9 15.13V5a1 1 0 0 1 2 0v10.13a3 3 0 1 1-2 0ZM10 18a1 1 0 1 0 0-2 1 1 0 0 0 0 2Z"/>
+        <path fill="currentColor" d="M15 7h4a1 1 0 0 0 0-2h-4a1 1 0 0 0 0 2Zm0 4h3a1 1 0 0 0 0-2h-3a1 1 0 0 0 0 2Zm0 4h4a1 1 0 0 0 0-2h-4a1 1 0 0 0 0 2Z"/>
+    </symbol>
+</svg>

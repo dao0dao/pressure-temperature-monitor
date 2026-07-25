@@ -1,0 +1,22 @@
+<div class="monitor">
+  <div class="monitor__chart">
+      <components-design-chart [options]="chartOptions()"></components-design-chart>
+  </div>
+
+  <form class="monitor__filter" [formGroup]="rangeForm">
+    <label class="monitor__filter-label" for="range">
+      <i class="pi pi-calendar"></i>
+      Date range
+    </label>
+
+    <p-datepicker
+      inputId="range"
+      formControlName="range"
+      selectionMode="range"
+      [showIcon]="true"
+      iconDisplay="input"
+      dateFormat="yy-mm-dd"
+      placeholder="Select a date range"
+    />
+  </form>
+</div>

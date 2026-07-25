@@ -1,0 +1,8 @@
+$breakpoint-tablet: 768px;
+$breakpoint-desktop: 992px;
+
+@mixin respond-up($breakpoint) {
+  @media (min-width: $breakpoint) {
+    @content;
+  }
+}

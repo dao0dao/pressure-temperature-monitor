@@ -1,0 +1,96 @@
+@use "../../../styles/breakpoints" as bp;
+
+:host {
+  display: block;
+}
+
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  width: 100%;
+  background: var(--color-bg);
+  border-bottom: 1px solid var(--color-border);
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.06);
+
+  &__bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 0.75rem 1.5rem;
+    max-width: 1920;
+    margin: 0 auto;
+  }
+
+  &__brand {
+    color: var(--color-text);
+  }
+
+  &__links {
+    display: flex;
+    gap: 0.5rem;
+
+    &--desktop {
+      display: none;
+    }
+
+    &--mobile {
+      flex-direction: column;
+      margin-bottom: 1.5rem;
+    }
+  }
+
+  &__link {
+    padding: 0.5rem 0.9rem;
+    border-radius: var(--radius-sm);
+    color: var(--color-text-muted);
+    text-decoration: none;
+    font-size: 0.925rem;
+    font-weight: 500;
+    transition:
+      background-color 0.15s ease,
+      color 0.15s ease;
+
+    &:hover {
+      background: var(--color-surface);
+      color: var(--color-primary-dark);
+    }
+
+    &--active {
+      background: #e5edfb;
+      color: var(--color-primary-dark);
+    }
+  }
+
+  &__actions {
+    display: none;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  &__username {
+    font-size: 0.875rem;
+    color: var(--color-text-muted);
+  }
+
+  &__logout-mobile {
+    width: 100%;
+  }
+}
+
+@include bp.respond-up(bp.$breakpoint-desktop) {
+  .nav {
+    &__links--desktop {
+      display: flex;
+    }
+
+    &__actions--desktop {
+      display: flex;
+    }
+
+    &__burger {
+      display: none;
+    }
+  }
+}

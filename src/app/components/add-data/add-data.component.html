@@ -1,0 +1,79 @@
+<div class="add-data">
+  <h2 class="add-data__title">Add cooling system data</h2>
+
+  <form class="add-data__form" [formGroup]="rootForm" (ngSubmit)="onSubmit()">
+    <div class="add-data__rows" formArrayName="rows">
+      @for (row of rows.controls; track row; let i = $index) {
+        <div class="add-data__row" [formGroupName]="i">
+          <div class="add-data__field">
+            <label>Date &amp; time</label>
+            <p-datepicker
+              formControlName="date"
+              [showTime]="true"
+              [showSeconds]="true"
+              [showIcon]="true"
+              iconDisplay="input"
+              dateFormat="yy-mm-dd"
+              placeholder="yyyy-MM-dd HH:mm:ss"
+            />
+            <app-field-error [control]="row.get('date')" />
+          </div>
+
+          <div class="add-data__field">
+            <label>Temperature (°C)</label>
+            <p-inputnumber
+              formControlName="temperature"
+              mode="decimal"
+              [minFractionDigits]="1"
+              [maxFractionDigits]="1"
+              suffix=" °C"
+            />
+            <app-field-error [control]="row.get('temperature')" />
+          </div>
+
+          <div class="add-data__field">
+            <label>Pressure (Pa)</label>
+            <p-inputnumber
+              formControlName="pressure"
+              mode="decimal"
+              [minFractionDigits]="0"
+              [maxFractionDigits]="0"
+              suffix=" Pa"
+            />
+            <app-field-error [control]="row.get('pressure')" />
+          </div>
+
+          @if (rows.length > 1) {
+            <button
+              pButton
+              type="button"
+              icon="pi pi-trash"
+              severity="danger"
+              [text]="true"
+              (click)="removeRow(i)"
+              aria-label="Remove row"
+            ></button>
+          }
+        </div>
+      }
+    </div>
+
+    <div class="add-data__actions">
+      <button
+        pButton
+        type="button"
+        label="Add row"
+        icon="pi pi-plus"
+        severity="secondary"
+        [disabled]="!canAddRow()"
+        (click)="addRow()"
+      ></button>
+
+      <button pButton type="submit" label="Save data" icon="pi pi-check" [disabled]="rootForm.invalid"></button>
+    </div>
+
+    @if (feedback$ | async; as message) {
+      <p class="add-data__feedback">{{ message }}</p>
+    }
+  </form>
+</div>

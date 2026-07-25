@@ -1,0 +1,5 @@
+<small class="field-error" [class.field-error--visible]="errorMessages.length > 0">
+  @for (message of errorMessages; track message) {
+    <span class="field-error__message">{{ message }}</span>
+  }
+</small>

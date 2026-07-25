@@ -1,0 +1,26 @@
+<div class="login">
+  <p-card class="login__card" header="Sign in">
+    <form class="login__form" [formGroup]="loginForm" (ngSubmit)="submit()">
+      <div class="login__field">
+        <label for="login">Login</label>
+        <input id="login" type="text" pInputText formControlName="login" placeholder="Enter your login" />
+          <app-field-error [control]="getField('login')" />
+      </div>
+
+      <div class="login__field">
+        <label for="password">Password</label>
+        <p-password
+          class="login__password"
+          inputId="password"
+          formControlName="password"
+          [feedback]="false"
+          [toggleMask]="true"
+          placeholder="Enter your password"
+        />
+          <app-field-error [control]="getField('password')" />
+      </div>
+
+      <button pButton type="submit" [disabled]="loginForm.invalid" label="Log in" class="login__submit"></button>
+    </form>
+  </p-card>
+</div>
