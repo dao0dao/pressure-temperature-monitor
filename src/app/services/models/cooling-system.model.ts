@@ -4,11 +4,6 @@ export interface CoolingSystemValues {
 }
 
 export interface CoolingSystemEntry extends CoolingSystemValues {
-  /** Format: yyyy-MM-dd HH-mm-ss */
+  /** Format: yyyy-MM-dd HH:mm:ss */
   date: string;
-}
-
-export interface AddEntriesResult {
-  added: number;
-  skipped: number;
 }
