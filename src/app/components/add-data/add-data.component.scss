@@ -1,4 +1,4 @@
-@use '../../../styles/breakpoints' as bp;
+@use "../../../styles/breakpoints" as bp;
 
 .add-data {
   display: flex;
@@ -47,14 +47,19 @@
     }
   }
 
-  &__actions {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.75rem;
-  }
-
   &__feedback {
     color: var(--color-success);
     font-size: 0.9rem;
+    text-align: center;
+  }
+
+  &__actions {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 0.5rem;
+    gap: 1rem;
+    button:first-child {
+      margin-left: auto;
+    }
   }
 }

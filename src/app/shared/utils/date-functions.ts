@@ -1,11 +1,14 @@
 const padStart = (value: number): string => value.toString().padStart(2, '0');
 
 export function toDateKey(date: Date): string {
+  if(!date){
+    return '';
+  }
   return `${date.getFullYear()}-${padStart(date.getMonth() + 1)}-${padStart(date.getDate())}`;
 }
 
 export function toDateTimeKey(date: Date): string {
-  const timePart = `${padStart(date.getHours())}-${padStart(date.getMinutes())}-${padStart(date.getSeconds())}`;
+  const timePart = `${padStart(date.getHours())}:${padStart(date.getMinutes())}:${padStart(date.getSeconds())}`;
   return `${toDateKey(date)} ${timePart}`;
 }
 

@@ -1,10 +1,15 @@
 import { Component, inject } from '@angular/core';
-import { AsyncPipe } from '@angular/common'
-import { FormArray, FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import {
+  FormArray,
+  FormBuilder,
+  FormGroup,
+  ReactiveFormsModule,
+  Validators,
+} from '@angular/forms';
 import { InputNumberModule } from 'primeng/inputnumber';
 import { DatePickerModule } from 'primeng/datepicker';
 import { ButtonModule } from 'primeng/button';
-import { BehaviorSubject } from 'rxjs';
+import { take } from 'rxjs';
 import { FieldErrorComponent } from '../../shared/components/field-error/field-error.component';
 import { toDateTimeKey } from '../../shared/utils/date-functions';
 import { CoolingSystemMockDataService } from '../../services/cooling-system-mock-data.service';
@@ -19,16 +24,21 @@ interface RowFormControls {
 @Component({
   selector: 'app-add-data',
   standalone: true,
-  imports: [AsyncPipe, ReactiveFormsModule, InputNumberModule, DatePickerModule, ButtonModule, FieldErrorComponent],
+  imports: [
+    ReactiveFormsModule,
+    InputNumberModule,
+    DatePickerModule,
+    ButtonModule,
+    FieldErrorComponent,
+  ],
   templateUrl: './add-data.component.html',
   styleUrl: './add-data.component.scss',
 })
 export class AddDataComponent {
   private readonly mockData = inject(CoolingSystemMockDataService);
   private readonly fb = inject(FormBuilder);
-  
-  private readonly feedbackSubject = new BehaviorSubject<string | null>(null);
-  protected readonly feedback$ = this.feedbackSubject.asObservable();
+
+  message = '';
 
   protected readonly rootForm = this.fb.group({
     rows: this.fb.array([this.createRowGroup()]),
@@ -61,6 +71,14 @@ export class AddDataComponent {
     }
     const entries = this.getMappedFormValueToEntries();
     this.mockData.addEntries(entries);
+    this.message = `Successfully added ${entries.length} entries.`;
+    this.rootForm.reset();
+    for(let i = this.rows.length - 1; i > 0; i--) {
+      this.rows.removeAt(i);
+    }    
+    this.rootForm.valueChanges.pipe(take(1)).subscribe(() => {
+      this.message = '';
+    });
   }
 
   private getMappedFormValueToEntries(): CoolingSystemEntry[] {

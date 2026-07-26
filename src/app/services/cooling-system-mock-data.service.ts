@@ -1,6 +1,9 @@
 import { Injectable } from '@angular/core';
 import { mockCoolingSystemData } from './mock.data';
-import { CoolingSystemEntry, CoolingSystemValues } from './models/cooling-system.model';
+import {
+  CoolingSystemEntry,
+  CoolingSystemValues,
+} from './models/cooling-system.model';
 
 @Injectable({ providedIn: 'root' })
 export class CoolingSystemMockDataService {
@@ -26,10 +29,19 @@ export class CoolingSystemMockDataService {
   }
 
   getData(dateFrom: string, dateTo: string): CoolingSystemEntry[] {
+    if (!dateFrom && !dateTo) {
+      return [];
+    }
     return [...this.entriesByDate.entries()]
       .map(([date, values]) => ({ ...values, date }))
       .filter((entry) => {
         const entryDate = entry.date.slice(0, 10);
+        if (dateFrom && !dateTo) {
+          return entryDate >= dateFrom;
+        }
+        if (!dateFrom && dateTo) {
+          return entryDate <= dateTo;
+        }
         return entryDate >= dateFrom && entryDate <= dateTo;
       });
   }
