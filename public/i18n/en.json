@@ -8,6 +8,10 @@
     "submitButton": "Log in"
   },
   "nav": {
+    "items": {
+      "monitor": "Monitor",
+      "addData": "Add data"
+    },
     "logout": "Log out",
     "signedInAs": "Signed in as",
     "openMenuAriaLabel": "Open menu",

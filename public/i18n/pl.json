@@ -8,6 +8,10 @@
     "submitButton": "Zaloguj"
   },
   "nav": {
+    "items":{
+      "monitor": "Monitor",
+      "addData": "Dodaj dane"
+    },
     "logout": "Wyloguj",
     "signedInAs": "Zalogowano jako",
     "openMenuAriaLabel": "Otwórz menu",

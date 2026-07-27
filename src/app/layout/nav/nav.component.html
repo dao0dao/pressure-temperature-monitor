@@ -2,7 +2,7 @@
   @if(isLogin()){
   @for (item of navItems; track item.path) {
   <a class="nav__link" [routerLink]="item.path" routerLinkActive="nav__link--active" (click)="closeMobileMenu()">
-    {{ item.label }}
+    {{ item.label | translate}}
   </a>
   }
   }
