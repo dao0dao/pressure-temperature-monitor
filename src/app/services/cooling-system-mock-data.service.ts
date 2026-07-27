@@ -17,8 +17,8 @@ export class CoolingSystemMockDataService {
         continue;
       }
       this.entriesByDate.set(entry.date, {
-        temperature: entry['temperature'],
-        pressure: entry['pressure'],
+        temperature: entry.values['temperature'],
+        pressure: entry.values['pressure'],
       });
     }
     this.entriesByDate = new Map(
@@ -33,7 +33,7 @@ export class CoolingSystemMockDataService {
       return [];
     }
     return [...this.entriesByDate.entries()]
-      .map(([date, values]) => ({ ...values, date }))
+      .map(([date, values]) => ({ values: { ...values }, date }))
       .filter((entry) => {
         const entryDate = entry.date.slice(0, 10);
         if (dateFrom && !dateTo) {
@@ -43,13 +43,13 @@ export class CoolingSystemMockDataService {
           return entryDate <= dateTo;
         }
         return entryDate >= dateFrom && entryDate <= dateTo;
-      }) as any;
+      });
   }
 
   getAll(): CoolingSystemEntry[] {
     return [...this.entriesByDate.entries()].map(([date, values]) => ({
-      ...values,
+      values: { ...values },
       date,
-    })) as any;
+    }));
   }
 }

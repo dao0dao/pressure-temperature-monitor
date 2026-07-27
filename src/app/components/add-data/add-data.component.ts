@@ -73,9 +73,9 @@ export class AddDataComponent {
     this.mockData.addEntries(entries);
     this.message = `Successfully added ${entries.length} entries.`;
     this.rootForm.reset();
-    for(let i = this.rows.length - 1; i > 0; i--) {
+    for (let i = this.rows.length - 1; i > 0; i--) {
       this.rows.removeAt(i);
-    }    
+    }
     this.rootForm.valueChanges.pipe(take(1)).subscribe(() => {
       this.message = '';
     });
@@ -86,10 +86,12 @@ export class AddDataComponent {
       const value = row.value as RowFormControls;
       return {
         date: toDateTimeKey(value.date!),
-        temperature: Number(value.temperature!.toFixed(1)),
-        pressure: Math.round(value.pressure!),
+        values: {
+          temperature: Number(value.temperature!.toFixed(1)),
+          pressure: Math.round(value.pressure!),
+        },
       };
-    }) as any;
+    });
   }
 
   private createRowGroup(): FormGroup {

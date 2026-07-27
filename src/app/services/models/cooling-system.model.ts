@@ -1,6 +1,7 @@
 export type CoolingSystemValues = Record<string, number>;
 
-export type CoolingSystemEntry = {
+export interface CoolingSystemEntry  {
   /** Format: yyyy-MM-dd HH:mm:ss */
   date: string;
-} & CoolingSystemValues
+  values: CoolingSystemValues
+} 

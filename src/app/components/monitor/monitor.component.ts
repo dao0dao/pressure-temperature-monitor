@@ -85,7 +85,7 @@ export class MonitorComponent {
         color: axis.color,
         yAxisIndex: axis.yAxisIndex,
         data: entries.map(
-          (entry) => [entry.date, entry[axis.seriesName]] as [string, number],
+          (entry) => [entry.date, entry.values[axis.seriesName]],
         ),
       })),
     };
