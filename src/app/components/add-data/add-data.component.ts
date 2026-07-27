@@ -89,7 +89,7 @@ export class AddDataComponent {
         temperature: Number(value.temperature!.toFixed(1)),
         pressure: Math.round(value.pressure!),
       };
-    });
+    }) as any;
   }
 
   private createRowGroup(): FormGroup {

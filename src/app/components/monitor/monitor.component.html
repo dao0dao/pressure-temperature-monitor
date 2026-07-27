@@ -1,6 +1,6 @@
 <div class="monitor">
   <div class="monitor__chart">
-      <components-design-chart [options]="chartOptions()"></components-design-chart>
+      <components-design-chart [options]="chartOptions()" [locale]="translationService.locale()"></components-design-chart>
   </div>
 
   <form class="monitor__filter" [formGroup]="rangeForm">

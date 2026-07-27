@@ -16,5 +16,10 @@
     "signedInAs": "Zalogowano jako",
     "openMenuAriaLabel": "Otwórz menu",
     "menuHeader": "Menu"
+  },
+  "monitor": {
+    "chartTitle": "Temperatura i ciśnienie",
+    "chartAxisTemperature": "Temperatura",
+    "chartAxisPressure": "Ciśnienie"
   }
 }

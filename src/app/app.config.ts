@@ -3,7 +3,6 @@ import { provideRouter } from '@angular/router';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { providePrimeNG } from 'primeng/config';
 import Aura from '@primeng/themes/aura';
-
 import { routes } from './app.routes';
 import { TranslationService } from './core/i18n/translate.service';
 import { DEFAULT_LOCALE } from './shared/i18n/locale.model';

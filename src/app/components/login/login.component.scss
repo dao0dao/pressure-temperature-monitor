@@ -28,8 +28,15 @@
       color: var(--color-text-muted);
     }
 
-    ::ng-deep .p-password {
-      width: 100%;
+    ::ng-deep {
+      .p-password {
+        width: 100%;
+
+        eyeicon,
+        eyeslashicon {
+          cursor: pointer;
+        }
+      }
     }
 
     input {
@@ -40,8 +47,6 @@
   &__submit {
     margin-top: 0.5rem;
     width: 100%;
-    background: var(--color-primary);
-    border-color: var(--color-primary);
   }
 }
 

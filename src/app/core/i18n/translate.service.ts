@@ -16,7 +16,6 @@ export class TranslationService {
   async setLocale(locale: Locale): Promise<void> {
     await this.loadTranslations(locale);
     this.localeSignal.set(locale);
-    console.log(this.locale())
   }
 
   async loadTranslations(locale: Locale): Promise<void> {
