@@ -1,8 +1,10 @@
 <ng-template #navLinks>
+  @if(isLogin()){
   @for (item of navItems; track item.path) {
   <a class="nav__link" [routerLink]="item.path" routerLinkActive="nav__link--active" (click)="closeMobileMenu()">
     {{ item.label }}
   </a>
+  }
   }
 </ng-template>
 
@@ -14,23 +16,23 @@
       <ng-container [ngTemplateOutlet]="navLinks" />
     </nav>
 
-    <div class="nav__actions nav__actions--desktop">
-      @if (username()) {
-      <span class="nav__username">{{ username() }}</span>
-      }
-      <button pButton type="button" label="Log out" severity="secondary" size="small" (click)="logout()"></button>
-    </div>
-
     <button pButton type="button" class="nav__burger" [text]="true" icon="pi pi-bars" (click)="toggleMobileMenu()"
       aria-label="Open menu"></button>
   </div>
 </header>
 
-<p-drawer [visible]="isMobileMenuOpen()" (visibleChange)="onDrawerVisibleChange($event)" position="right" header="Menu">
+<p-drawer [visible]="isMobileMenuOpen()" (visibleChange)="onDrawerVisibleChange($event)" position="right"
+  [header]="'nav.menuHeader' | translate">
+  
+  <app-language-switcher justifyContent="end"/>
+
   <nav class="nav__links nav__links--mobile">
     <ng-container [ngTemplateOutlet]="navLinks" />
   </nav>
-  <p class="nav__username">Signed in as {{ username() }}</p> 
-  <button pButton type="button" label="Log out" severity="secondary" class="nav__logout-mobile"
+
+  @if (isLogin()) {
+  <p class="nav__username">{{ 'nav.signedInAs' | translate }} {{ username() }}</p>
+  <button pButton type="button" [label]="'nav.logout' | translate" severity="secondary" class="nav__logout-mobile"
     (click)="logout(); closeMobileMenu()"></button>
+  }
 </p-drawer>

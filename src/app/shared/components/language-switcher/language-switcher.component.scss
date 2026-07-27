@@ -1,0 +1,22 @@
+.language-switcher {
+  display: flex;
+  gap: 0.4rem;
+
+  &--start{
+    justify-content: start;
+  }
+  &--center{
+    justify-content: center;
+  }
+  &--end{
+    justify-content: end;
+  }
+
+  &__button--active {
+    ::ng-deep &.p-button {
+      background: var(--color-primary);
+      border-color: var(--color-primary);
+      color: #ffffff;
+    }
+  }
+}

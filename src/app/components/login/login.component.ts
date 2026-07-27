@@ -13,6 +13,7 @@ import { ButtonModule } from 'primeng/button';
 import { CardModule } from 'primeng/card';
 import { AuthService } from '../../core/auth/auth.service';
 import { FieldErrorComponent } from '../../shared/components/field-error/field-error.component';
+import { TranslatePipe } from '../../shared/i18n/translate.pipe';
 
 @Component({
   selector: 'app-login',
@@ -24,6 +25,7 @@ import { FieldErrorComponent } from '../../shared/components/field-error/field-e
     ButtonModule,
     CardModule,
     FieldErrorComponent,
+    TranslatePipe
   ],
   templateUrl: './login.component.html',
   styleUrl: './login.component.scss',

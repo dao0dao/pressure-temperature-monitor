@@ -1,0 +1,16 @@
+{
+  "login": {
+    "title": "Sign in",
+    "loginLabel": "Login",
+    "loginPlaceholder": "Enter your login",
+    "passwordLabel": "Password",
+    "passwordPlaceholder": "Enter your password",
+    "submitButton": "Log in"
+  },
+  "nav": {
+    "logout": "Log out",
+    "signedInAs": "Signed in as",
+    "openMenuAriaLabel": "Open menu",
+    "menuHeader": "Menu"
+  }
+}

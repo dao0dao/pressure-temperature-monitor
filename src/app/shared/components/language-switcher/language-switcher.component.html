@@ -1,0 +1,19 @@
+<div class="language-switcher" [class]="languageSwitcherClass()">
+  @for (option of options; track option.locale) {
+    <!-- Important: in this version of PrimeNG (18), the button does not re-render its
+     severity-based CSS class when the [severity] input changes dynamically at runtime
+     (a known regression in PrimeNG 18 — the class is only computed correctly on the
+     initial render). We work around this by keeping severity static and driving the
+     active/inactive style ourselves via [ngClass] -->
+    <button
+      pButton
+      type="button"
+      severity="secondary"
+      [ngClass]="{ 'language-switcher__button--active': locale() === option.locale }"
+      (click)="selectLocale(option.locale)"
+      size="small"
+    >
+      {{ option.label }}
+    </button>
+  }
+</div>

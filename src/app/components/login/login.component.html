@@ -1,26 +1,38 @@
 <div class="login">
-  <p-card class="login__card" header="Sign in">
+  <p-card class="login__card" [header]="'login.title' | translate">
     <form class="login__form" [formGroup]="loginForm" (ngSubmit)="submit()">
       <div class="login__field">
-        <label for="login">Login</label>
-        <input id="login" type="text" pInputText formControlName="login" placeholder="Enter your login" />
-          <app-field-error [control]="getField('login')" />
+        <label for="login">{{ 'login.loginLabel' | translate }}</label>
+        <input
+          id="login"
+          type="text"
+          pInputText
+          formControlName="login"
+          [placeholder]="'login.loginPlaceholder' | translate"
+        />
+        <app-field-error [control]="getField('login')" />
       </div>
 
       <div class="login__field">
-        <label for="password">Password</label>
+        <label for="password">{{ 'login.passwordLabel' | translate }}</label>
         <p-password
           class="login__password"
           inputId="password"
           formControlName="password"
           [feedback]="false"
           [toggleMask]="true"
-          placeholder="Enter your password"
+          [placeholder]="'login.passwordPlaceholder' | translate"
         />
-          <app-field-error [control]="getField('password')" />
+        <app-field-error [control]="getField('password')" />
       </div>
 
-      <button pButton type="submit" [disabled]="loginForm.invalid" label="Log in" class="login__submit"></button>
+      <button
+        pButton
+        type="submit"
+        [disabled]="loginForm.invalid"
+        [label]="'login.submitButton' | translate"
+        class="login__submit"
+      ></button>
     </form>
   </p-card>
 </div>

@@ -7,6 +7,8 @@ import { DrawerModule } from 'primeng/drawer';
 import { NAV_ITEMS } from './nav-items';
 import { AuthService } from '../../core/auth/auth.service';
 import { IconComponent } from '../../shared/components/icon/icon.component';
+import { TranslatePipe } from '../../shared/i18n/translate.pipe';
+import { LanguageSwitcherComponent } from '../../shared/components/language-switcher/language-switcher.component';
 
 @Component({
   selector: 'app-nav',
@@ -18,6 +20,8 @@ import { IconComponent } from '../../shared/components/icon/icon.component';
     ButtonModule,
     DrawerModule,
     IconComponent,
+    TranslatePipe,
+    LanguageSwitcherComponent
   ],
   templateUrl: './nav.component.html',
   styleUrl: './nav.component.scss',
@@ -27,6 +31,7 @@ export class NavComponent {
   private readonly router = inject(Router);
 
   readonly username = this.authService.username;
+  readonly isLogin = this.authService.isLoggedIn
   readonly navItems = NAV_ITEMS;
 
   private readonly mobileMenuState = signal(false);

@@ -16,7 +16,6 @@
   &__bar {
     display: flex;
     align-items: center;
-    justify-content: space-between;
     gap: 1rem;
     padding: 0.75rem 1.5rem;
     max-width: 1920;
@@ -37,7 +36,7 @@
 
     &--mobile {
       flex-direction: column;
-      margin-bottom: 1.5rem;
+      margin: 1.5rem 0;
     }
   }
 
@@ -63,6 +62,10 @@
     }
   }
 
+  &__burger {
+    margin-left: auto;
+  }
+
   &__actions {
     display: none;
     align-items: center;
@@ -84,12 +87,7 @@
     &__links--desktop {
       display: flex;
     }
-
-    &__actions--desktop {
-      display: flex;
-    }
-
-    &__burger {
+    &__links--mobile {
       display: none;
     }
   }

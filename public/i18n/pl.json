@@ -1,0 +1,16 @@
+{
+  "login": {
+    "title": "Zaloguj się",
+    "loginLabel": "Login",
+    "loginPlaceholder": "Wprowadź swój login",
+    "passwordLabel": "Hasło",
+    "passwordPlaceholder": "Wprowadź swoje hasło",
+    "submitButton": "Zaloguj"
+  },
+  "nav": {
+    "logout": "Wyloguj",
+    "signedInAs": "Zalogowano jako",
+    "openMenuAriaLabel": "Otwórz menu",
+    "menuHeader": "Menu"
+  }
+}
