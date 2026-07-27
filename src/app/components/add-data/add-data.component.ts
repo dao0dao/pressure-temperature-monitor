@@ -14,6 +14,7 @@ import { FieldErrorComponent } from '../../shared/components/field-error/field-e
 import { toDateTimeKey } from '../../shared/utils/date-functions';
 import { CoolingSystemMockDataService } from '../../services/cooling-system-mock-data.service';
 import { CoolingSystemEntry } from '../../services/models/cooling-system.model';
+import { TranslatePipe } from '../../shared/i18n/translate.pipe';
 
 interface RowFormControls {
   date: Date | null;
@@ -30,6 +31,7 @@ interface RowFormControls {
     DatePickerModule,
     ButtonModule,
     FieldErrorComponent,
+    TranslatePipe
   ],
   templateUrl: './add-data.component.html',
   styleUrl: './add-data.component.scss',

@@ -14,12 +14,19 @@
     },
     "logout": "Wyloguj",
     "signedInAs": "Zalogowano jako",
-    "openMenuAriaLabel": "Otwórz menu",
     "menuHeader": "Menu"
   },
   "monitor": {
     "chartTitle": "Temperatura i ciśnienie",
     "chartAxisTemperature": "Temperatura",
     "chartAxisPressure": "Ciśnienie"
+  },
+  "addData": {
+    "dateAndTime": "Data i czas",
+    "dateAndTimePlaceholder": "rrrr-mm-dd gg:mm:ss",
+    "temperature": "Temperatura (°C)",
+    "pressure": "Ciśnienie (Pa)",
+    "addRow": "Dodaj wiersz",
+    "saveData": "Zapisz"
   }
 }
