@@ -1,7 +1,7 @@
 import { Component, computed, inject, input } from '@angular/core';
 import { ButtonModule } from 'primeng/button';
 import { TranslationService } from '../../../core/i18n/translate.service';
-import { Locale } from '../../i18n/locale.model';
+import { Locale } from '../../i18n/models/locale.model';
 import { NgClass } from '@angular/common';
 
 const LOCALE_LABELS: Record<Locale, string> = {

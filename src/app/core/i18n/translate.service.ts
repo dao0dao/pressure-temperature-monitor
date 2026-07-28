@@ -1,7 +1,7 @@
 import { Injectable, inject, signal } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { firstValueFrom } from 'rxjs';
-import { DEFAULT_LOCALE, Locale } from '../../shared/i18n/locale.model';
+import { DEFAULT_LOCALE, Locale } from '../../shared/i18n/models/locale.model';
 
 @Injectable({ providedIn: 'root' })
 export class TranslationService {
@@ -33,7 +33,7 @@ export class TranslationService {
 
   private resolveKey(source: unknown, path: string): string {
   const value = path.split('.').reduce<unknown>((acc, translationKey) => {
-    if (acc !== null && typeof acc === 'object' && translationKey in (acc as object)) {
+    if (acc !== null && typeof acc === 'object' && translationKey in acc) {
       return (acc as Record<string, unknown>)[translationKey];
     }
     return undefined;

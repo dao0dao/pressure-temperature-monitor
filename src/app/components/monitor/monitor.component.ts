@@ -61,7 +61,7 @@ export class MonitorComponent {
       {
         name: temperatureLabel,
         displayedName: temperatureLabel,
-        seriesName: 'temperature' as const,
+        seriesName: 'temperature',
         yAxisIndex: 0,
         symbol: '°C',
         color: '#eb6a25',
@@ -69,7 +69,7 @@ export class MonitorComponent {
       {
         name: pressureLabel,
         displayedName: pressureLabel,
-        seriesName: 'pressure' as const,
+        seriesName: 'pressure',
         yAxisIndex: 1,
         symbol: 'Pa',
         color: '#0ea5e9',

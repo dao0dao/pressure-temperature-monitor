@@ -5,7 +5,7 @@ import { providePrimeNG } from 'primeng/config';
 import Aura from '@primeng/themes/aura';
 import { routes } from './app.routes';
 import { TranslationService } from './core/i18n/translate.service';
-import { DEFAULT_LOCALE } from './shared/i18n/locale.model';
+import { DEFAULT_LOCALE } from './shared/i18n/models/locale.model';
 import { provideHttpClient } from '@angular/common/http';
 
 function initializeTranslations(): () => Promise<void> {
