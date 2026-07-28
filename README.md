@@ -48,6 +48,7 @@ Aplikacja dostępna pod `http://localhost:4200`.
 ## Struktura projektu
 
 \`\`\`
+
 src/app/
   core/          
   layout/        
@@ -56,5 +57,6 @@ src/app/
 libs/
   components-design/   
 public/
-  i18n/          
+  i18n/    
+      
 \`\`\`
