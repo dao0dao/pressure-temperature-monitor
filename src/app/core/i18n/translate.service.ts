@@ -22,7 +22,7 @@ export class TranslationService {
     if (this.translations.has(locale)) {
       return;
     }
-    const messages = await firstValueFrom(this.http.get(`i18n/${locale}.json`)).catch(e => new Object);
+    const messages = await firstValueFrom(this.http.get(`/i18n/${locale}.json`)).catch(e => new Object);
     this.translations.set(locale, messages);
   }
 
