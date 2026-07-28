@@ -30,24 +30,24 @@ Wszystkie dane pomiarowe są mockowane w pamięci (`CoolingSystemMockDataService
 
 ## Uruchomienie lokalnie (bez Dockera)
 
-\`\`\`bash
+```bash
 npm install
 npm start
-\`\`\`
+```
 
 Aplikacja dostępna pod `http://localhost:4200`.
 
 ## Uruchomienie przez Docker
 
-\`\`\`bash
+```bash
 docker compose -f docker/docker-compose.dev.yml up
-\`\`\`
+```
 
 Aplikacja dostępna pod `http://localhost:4200`.
 
 ## Struktura projektu
 
-\`\`\`
+```
 
 src/app/
   core/          
@@ -59,4 +59,4 @@ libs/
 public/
   i18n/    
       
-\`\`\`
+```
