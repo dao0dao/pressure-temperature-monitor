@@ -14,12 +14,13 @@ import { CoolingSystemMockDataService } from '../../services/cooling-system-mock
 import { CoolingSystemEntry } from '../../services/models/cooling-system.model';
 import { getTodayEdgeDate, toDateKey } from '../../shared/utils/date-functions';
 import { TranslationService } from '../../core/i18n/translate.service';
+import { TranslatePipe } from '../../shared/i18n/translate.pipe';
 
 @Component({
   selector: 'app-monitor',
   standalone: true,
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
-  imports: [ReactiveFormsModule, DatePickerModule],
+  imports: [TranslatePipe, ReactiveFormsModule, DatePickerModule],
   templateUrl: './monitor.component.html',
   styleUrl: './monitor.component.scss',
 })

@@ -6,7 +6,7 @@
   <form class="monitor__filter" [formGroup]="rangeForm">
     <label class="monitor__filter-label" for="range">
       <i class="pi pi-calendar"></i>
-      Date range
+      {{'monitor.dateRange.label' | translate}}
     </label>
 
     <p-datepicker
@@ -16,7 +16,7 @@
       [showIcon]="true"
       iconDisplay="input"
       dateFormat="yy-mm-dd"
-      placeholder="Select a date range"
+      [placeholder]="'monitor.dateRange.placeholder' | translate"
     />
   </form>
 </div>
