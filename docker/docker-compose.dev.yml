@@ -1,3 +1,5 @@
+name: monitor-app
+
 services:
   app:
     container_name: frontend-monitor-app
