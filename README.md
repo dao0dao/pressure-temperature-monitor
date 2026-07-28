@@ -1,27 +1,60 @@
-# PressureTemperatureMonitor
+# Pressure & Temperature Monitor
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.21.
+Angularowa aplikacja do monitorowania danych z systemu chłodzenia (temperatura i ciśnienie w czasie) na mockowych danych, z możliwością filtrowania po zakresie dat i ręcznego dodawania nowych pomiarów.
 
-## Development server
+Wykres wykorzystuje bibliotekę komponentów Vue skompilowaną jako Web Component: **[components-design](https://github.com/dao0dao/components-design)**.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+> **Ważne:** branch `main` **nie zawiera** wgranej biblioteki `components-design` — trzeba ją samodzielnie wygenerować i skopiować do `libs/components-design/` przed pierwszym uruchomieniem, inaczej build/serve zakończy się błędem `Cannot find module 'components-design'`.
 
-## Code scaffolding
+## Wersja hostowana
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Aplikacja z brancha `vercel-deploy` jest dostępna online pod adresem: **[https://pressure-temperature-monitor-ten.vercel.app/](https://pressure-temperature-monitor-ten.vercel.app/)**
 
-## Build
+## Backend
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+Aplikacja **nie posiada backendu** — wszystkie dane (autoryzacja, pomiary) są mockowane wyłącznie po stronie klienta.
 
-## Running unit tests
+## Logowanie
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Formularz logowania **akceptuje dowolny login i hasło** — nie ma prawdziwej autoryzacji. Wpisanie czegokolwiek i wysłanie formularza zaloguje użytkownika. Login zapisywany jest w `localStorage`, dzięki czemu **odświeżenie strony nie wylogowuje** użytkownika — sesja "trwa" do momentu ręcznego wylogowania lub wyczyszczenia danych przeglądarki.
 
-## Running end-to-end tests
+## Dane
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+Wszystkie dane pomiarowe są mockowane w pamięci (`CoolingSystemMockDataService`) i **znikają po odświeżeniu strony**. Domyślny zestaw danych startowych generowany jest dynamicznie względem bieżącego momentu — **120 wpisów, co godzinę**. Dodatkowe wpisy można dodać ręcznie w widoku **Add data**.
 
-## Further help
+## Wymagania
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+- Node.js 20+
+- npm
+- (opcjonalnie) Docker + Docker Compose
+
+## Uruchomienie lokalnie (bez Dockera)
+
+\`\`\`bash
+npm install
+npm start
+\`\`\`
+
+Aplikacja dostępna pod `http://localhost:4200`.
+
+## Uruchomienie przez Docker
+
+\`\`\`bash
+docker compose -f docker/docker-compose.dev.yml up
+\`\`\`
+
+Aplikacja dostępna pod `http://localhost:4200`.
+
+## Struktura projektu
+
+\`\`\`
+src/app/
+  core/          
+  layout/        
+  features/      
+  shared/        
+libs/
+  components-design/   
+public/
+  i18n/          
+\`\`\`

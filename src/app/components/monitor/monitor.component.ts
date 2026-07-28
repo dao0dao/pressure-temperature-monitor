@@ -8,7 +8,7 @@ import { FormBuilder, ReactiveFormsModule } from '@angular/forms';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { startWith } from 'rxjs';
 import { DatePickerModule } from 'primeng/datepicker';
-import type { ChartOptions } from 'components-design';
+import { ChartOptions } from 'components-design';
 import 'components-design';
 import { CoolingSystemMockDataService } from '../../services/cooling-system-mock-data.service';
 import { CoolingSystemEntry } from '../../services/models/cooling-system.model';
