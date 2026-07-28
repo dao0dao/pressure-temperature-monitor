@@ -1,0 +1,6 @@
+{
+  "name": "components-design",
+  "type": "module",
+  "main": "components-design.es.js",
+  "types": "components-design.es.d.ts"
+}
