@@ -4,6 +4,7 @@
   grid-template-columns: 1fr;
   grid-template-rows: auto 1fr;
   grid-template-areas: "nav" "content";
+  justify-content: center;
   align-items: stretch;
   height: 100vh;
   background: #ffffff;
