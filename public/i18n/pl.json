@@ -22,6 +22,7 @@
     "chartAxisPressure": "Ciśnienie"
   },
   "addData": {
+    "title": "Dodawanie danych",
     "dateAndTime": "Data i czas",
     "dateAndTimePlaceholder": "rrrr-mm-dd gg:mm:ss",
     "temperature": "Temperatura (°C)",
